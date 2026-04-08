@@ -57,16 +57,12 @@ kubectl get inferenceservice intent-classifier -n intent
 
 ### Check the logs
 
-...
-
+```
 kubectl get pods -n kserve
-
 kubectl logs <pod name> -n kserve
-
 kubectl get HorizontalPodAutoscalers.autoscaling -n intent
-
 kubectl get svc -n intent
-...
+```
 
 ### Port-forward to access the model
 

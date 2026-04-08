@@ -58,6 +58,7 @@ kubectl get inferenceservice intent-classifier -n intent
 ### Check the logs
 
 ...
+
 kubectl get pods -n kserve
 
 kubectl logs <pod name> -n kserve

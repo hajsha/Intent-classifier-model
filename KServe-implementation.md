@@ -58,13 +58,12 @@ kubectl get inferenceservice intent-classifier -n intent
 ### Check the logs
 
 kubectl get pods -n kserve
-kubectl logs kserve-controller-manager-6d49cc494f-rqxd6 -n kserve
+
+kubectl logs <pod name> -n kserve
+
 kubectl get HorizontalPodAutoscalers.autoscaling -n intent
+
 kubectl get svc -n intent
-
-
-
-
 
 
 ### Port-forward to access the model
@@ -72,6 +71,17 @@ kubectl get svc -n intent
 ```
 kubectl -n ml port-forward svc/<svc-name> 8080:80
 ```
+
+$ kubectl port-forward svc/intent-classifier-predictor 8080:80 -n intent --address 0.0.0.0
+error: unable to forward port because pod is not running. Current status=Pending
+
+$ kubectl get pods -o wide -n intent
+
+$ kubectl describe pod <pod-name>
+
+
+$ kubectl logs intent-classifier-predictor-58f4f97677-z494j -c storage-initializer -n intent
+
 
 ### Inference the Model
 

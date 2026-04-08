@@ -42,7 +42,7 @@ spec:
     model:
       modelFormat:
         name: sklearn
-      storageUri: "<downloadable location>"
+      storageUri: "https://github.com/hajsha/Intent-classifier-model/blob/c4200fc36a4e4eccfb0e78043f5e071397606b91/model/intent_model.pkl"
       resources:
         requests:
           cpu: "100m"
@@ -54,6 +54,18 @@ EOF
 
 kubectl get inferenceservice intent-classifier -n intent
 ```
+
+### Check the logs
+
+kubectl get pods -n kserve
+kubectl logs kserve-controller-manager-6d49cc494f-rqxd6 -n kserve
+kubectl get HorizontalPodAutoscalers.autoscaling -n intent
+kubectl get svc -n intent
+
+
+
+
+
 
 ### Port-forward to access the model
 

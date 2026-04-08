@@ -42,7 +42,7 @@ spec:
     model:
       modelFormat:
         name: sklearn
-      storageUri: "https://github.com/hajsha/Intent-classifier-model/blob/c4200fc36a4e4eccfb0e78043f5e071397606b91/model/intent_model.pkl"
+      storageUri: "https://raw.githubusercontent.com/hajsha/Intent-classifier-model/kserve/model/intent_model.pkl"
       resources:
         requests:
           cpu: "100m"
